@@ -1,0 +1,18 @@
+package com.zs.pms.dao;
+
+import java.util.List;
+
+import javax.management.Query;
+
+import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
+
+import com.zs.pms.po.TUser;
+import com.zs.pms.vo.QueryUser;
+
+@Repository
+public interface UserDao2 {
+		
+	@Select("select * from tuser where sex=#{sex}")
+	public List<TUser> queryByCon(QueryUser query);
+}
